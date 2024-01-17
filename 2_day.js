@@ -28,3 +28,42 @@ let evens = (arr) => {
   }
 
   console.log(evens([1, 2, 3, 4, 5, 6,]))
+
+
+  const sayHello = (name) => {
+    console.log(`sayHello name param: ${name}`);
+    return `Hello, ${name}!`;
+  };
+  const irishGreeting = (name) => `Top o' the marnin' to ye, ${name}!`;
+  
+  const greet = (greetName, greetingCallback) => {
+    // `name` `greetingCallback` are parameters of the function `greet`
+    console.log(greetingCallback(greetName));
+  };
+  
+  const greetPerson = (username, country) => {
+    if (country === "Ireland") {
+      greet(username, () => irishGreeting(username));
+    } else {
+      greet(username, () => sayHello(username));
+    }
+  };
+  
+  // get user input with their username and country
+  greetPerson("Cat", "Ireland");
+  
+  // greet("Josh", sayHello); // invoke `greet`
+  
+  const words = ["apple", "berry", "cherry"];
+  
+  let capMapArr = words.map((word) => {
+    return word[0].toUpperCase() + word.slice(1);
+    // whatever is returned here becomes the corresponding element in the new array
+  });
+  
+  // words.forEach((word, i) => {
+  //   words[i] = word[0].toUpperCase() + word.slice(1);
+  // });
+  
+  console.log(capMapArr);
+  console.log(words);
